@@ -47,3 +47,17 @@ console.log(main,secondary);
 [main,secondary]=[secondary,main]
 
 console.log(main,secondary);
+
+const [starter, mainC] =restaurant.order(2,0);
+console.log(starter,mainC);
+
+//Nested Destructuring
+const nested =[2, 4, [5, 6]];
+// const [i, ,j] = nested;
+//console.log(i,j);
+const[i, ,[j,k]]=nested;
+console.log(i,j,k);
+
+//Default values
+const [p=1,q=1,r=1] = [8,9];
+console.log(p,q,r);
