@@ -32,32 +32,53 @@ const restaurant = {
   },
 };
 
-const arr = [2,3,4];
-const a = arr[0];
-const b = arr[1];
-const c = arr[2];
+const{name,openingHours,categories}=restaurant;
+console.log(name,openingHours,categories);
 
-const [x,y,z]=arr;
-console.log(x,y,z);
+const {name:restaurantName,openingHours:hours,categories:tags}=restaurant;
+console.log(restaurantName,hours,tags);
 
-let [main, ,secondary] =restaurant.categories;
-console.log(main,secondary);
+const{menu =[],starterMenu:starters=[]}=restaurant;
+console.log(menu,starters);
 
 
-[main,secondary]=[secondary,main]
+//Mutating variables
+let a =111;
+let b=999;
+const obj={a:23,b:7,c:14};
+({a,b}=obj);
+console.log(a,b);
 
-console.log(main,secondary);
+//Nested objects
+const{fri:{open,close}}=openingHours;
+console.log(open,close);
 
-const [starter, mainC] =restaurant.order(2,0);
-console.log(starter,mainC);
+// const arr = [2,3,4];
+// const a = arr[0];
+// const b = arr[1];
+// const c = arr[2];
 
-//Nested Destructuring
-const nested =[2, 4, [5, 6]];
-// const [i, ,j] = nested;
-//console.log(i,j);
-const[i, ,[j,k]]=nested;
-console.log(i,j,k);
+// const [x,y,z]=arr;
+// console.log(x,y,z);
 
-//Default values
-const [p=1,q=1,r=1] = [8,9];
-console.log(p,q,r);
+// let [main, ,secondary] =restaurant.categories;
+// console.log(main,secondary);
+
+
+// [main,secondary]=[secondary,main]
+
+// console.log(main,secondary);
+
+// const [starter, mainC] =restaurant.order(2,0);
+// console.log(starter,mainC);
+
+// //Nested Destructuring
+// const nested =[2, 4, [5, 6]];
+// // const [i, ,j] = nested;
+// //console.log(i,j);
+// const[i, ,[j,k]]=nested;
+// console.log(i,j,k);
+
+// //Default values
+// const [p=1,q=1,r=1] = [8,9];
+// console.log(p,q,r);
