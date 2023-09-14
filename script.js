@@ -11,11 +11,7 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-
-  order : function(starterIndex,mainIndex){
-    return [this.starterMenu[starterIndex],this.mainMenu[mainIndex]]},
   
-
   openingHours: {
     thu: {
       open: 12,
@@ -30,28 +26,77 @@ const restaurant = {
       close: 24,
     },
   },
+
+  order : function(starterIndex,mainIndex){
+    return [this.starterMenu[starterIndex],this.mainMenu[mainIndex]]},
+
+  orderDelivery : function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    adress,
+  }){
+    console.log(`Order recieved! ${this.starterMenu[starterIndex] }and ${this.mainMenu[mainIndex]} will be delivered to ${adress} at ${time}}`);
+  },
+
+  orderPasta:function (ing1,ing2,ing3){
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`);
+  }
 };
 
-const{name,openingHours,categories}=restaurant;
-console.log(name,openingHours,categories);
+const arr = [7,8,9];
+const badNewArr = [1,2,arr[0],arr[1],arr[2]];
+console.log(badNewArr);
 
-const {name:restaurantName,openingHours:hours,categories:tags}=restaurant;
-console.log(restaurantName,hours,tags);
+const newArr =[1,2,...arr];
+console.log(newArr);
 
-const{menu =[],starterMenu:starters=[]}=restaurant;
-console.log(menu,starters);
+console.log(...newArr);
+
+const newMenu = [...restaurant.mainMenu,'Gnocci'];
+console.log(newMenu);
+
+//coppy array
+const mainMenuCopy =[...restaurant.mainMenu];
+
+//join 2 arrays
+const menu = [...restaurant.starterMenu,...restaurant.mainMenu];
+
+const str ='Jonas';
+const letters =[...str,'','S.'];
+console.log(letters);
+
+//const ingredients =[prompt('Let\'s make pasta ! Ingredient 1?'),prompt('Ingredient 2?'),prompt('Ingredient 3?')]
+//console.log(ingredients);
+
+//restaurant.orderPasta(...ingredients)
+
+const newRestaurant = {foundedIn:1998,...restaurant,founder:'Giusepe'};
+console.log(newRestaurant);
+
+const restaurantCopy ={...restaurant};
+restaurantCopy.name = 'Ristorante Roma'
+
+// const{name,openingHours,categories}=restaurant;
+// console.log(name,openingHours,categories);
+
+// const {name:restaurantName,openingHours:hours,categories:tags}=restaurant;
+// console.log(restaurantName,hours,tags);
+
+// const{menu =[],starterMenu:starters=[]}=restaurant;
+// console.log(menu,starters);
 
 
-//Mutating variables
-let a =111;
-let b=999;
-const obj={a:23,b:7,c:14};
-({a,b}=obj);
-console.log(a,b);
+// //Mutating variables
+// let a =111;
+// let b=999;
+// const obj={a:23,b:7,c:14};
+// ({a,b}=obj);
+// console.log(a,b);
 
-//Nested objects
-const{fri:{open,close}}=openingHours;
-console.log(open,close);
+// //Nested objects
+// const{fri:{open,close}}=openingHours;
+// console.log(open,close);
 
 // const arr = [2,3,4];
 // const a = arr[0];
