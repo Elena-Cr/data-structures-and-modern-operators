@@ -48,29 +48,41 @@ const restaurant = {
   },
 };
 
-//SPREAD - on right side of =
-const arr = [1,2,...[3,4]];
-//REST - on left side of = 
-const [a,b,...others]= [1,2,3,4,5];
+console.log(3||'Jonas');
+console.log(''||'Jonas');
+console.log(true||0);
+console.log(undefined||null);
 
-console.log(a,b,others);
 
-const {sat,...weekdays}= restaurant.openingHours;
- console.log(weekdays);
+console.log(3&&'Jonas');
+console.log(''&&'Jonas');
+console.log(true&&0);
+console.log(undefined&&null);
 
- const add = function(...numbers){
-  let sum = 0;
-  for (let i = 0; i< numbers.length; i++)sum+=numbers[i];
-  console.log(sum);
- };
-add(2,3);
-add(5,8,1,0,5);
-add(5,2,8,1,0,8,6)
 
-const x = [23,6,13];
-add(...x);
+// //SPREAD - on right side of =
+// const arr = [1,2,...[3,4]];
+// //REST - on left side of = 
+// const [a,b,...others]= [1,2,3,4,5];
 
-restaurant.orderPizza('mushroom',"onion",'ham','tomato')
+// console.log(a,b,others);
+
+// const {sat,...weekdays}= restaurant.openingHours;
+//  console.log(weekdays);
+
+//  const add = function(...numbers){
+//   let sum = 0;
+//   for (let i = 0; i< numbers.length; i++)sum+=numbers[i];
+//   console.log(sum);
+//  };
+// add(2,3);
+// add(5,8,1,0,5);
+// add(5,2,8,1,0,8,6)
+
+// const x = [23,6,13];
+// add(...x);
+
+// restaurant.orderPizza('mushroom',"onion",'ham','tomato')
 
 // const arr = [7,8,9];
 // const badNewArr = [1,2,arr[0],arr[1],arr[2]];
