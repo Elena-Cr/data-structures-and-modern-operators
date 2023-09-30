@@ -41,41 +41,69 @@ const restaurant = {
 
   orderPasta:function (ing1,ing2,ing3){
     console.log(`Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`);
-  }
+  },
+  orderPizza:function(mainIngredient,...otherIngredients){
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
 
-const arr = [7,8,9];
-const badNewArr = [1,2,arr[0],arr[1],arr[2]];
-console.log(badNewArr);
+//SPREAD - on right side of =
+const arr = [1,2,...[3,4]];
+//REST - on left side of = 
+const [a,b,...others]= [1,2,3,4,5];
 
-const newArr =[1,2,...arr];
-console.log(newArr);
+console.log(a,b,others);
 
-console.log(...newArr);
+const {sat,...weekdays}= restaurant.openingHours;
+ console.log(weekdays);
 
-const newMenu = [...restaurant.mainMenu,'Gnocci'];
-console.log(newMenu);
+ const add = function(...numbers){
+  let sum = 0;
+  for (let i = 0; i< numbers.length; i++)sum+=numbers[i];
+  console.log(sum);
+ };
+add(2,3);
+add(5,8,1,0,5);
+add(5,2,8,1,0,8,6)
 
-//coppy array
-const mainMenuCopy =[...restaurant.mainMenu];
+const x = [23,6,13];
+add(...x);
 
-//join 2 arrays
-const menu = [...restaurant.starterMenu,...restaurant.mainMenu];
+restaurant.orderPizza('mushroom',"onion",'ham','tomato')
 
-const str ='Jonas';
-const letters =[...str,'','S.'];
-console.log(letters);
+// const arr = [7,8,9];
+// const badNewArr = [1,2,arr[0],arr[1],arr[2]];
+// console.log(badNewArr);
 
-//const ingredients =[prompt('Let\'s make pasta ! Ingredient 1?'),prompt('Ingredient 2?'),prompt('Ingredient 3?')]
-//console.log(ingredients);
+// const newArr =[1,2,...arr];
+// console.log(newArr);
 
-//restaurant.orderPasta(...ingredients)
+// console.log(...newArr);
 
-const newRestaurant = {foundedIn:1998,...restaurant,founder:'Giusepe'};
-console.log(newRestaurant);
+// const newMenu = [...restaurant.mainMenu,'Gnocci'];
+// console.log(newMenu);
 
-const restaurantCopy ={...restaurant};
-restaurantCopy.name = 'Ristorante Roma'
+// //coppy array
+// const mainMenuCopy =[...restaurant.mainMenu];
+
+// //join 2 arrays
+// const menu = [...restaurant.starterMenu,...restaurant.mainMenu];
+
+// const str ='Jonas';
+// const letters =[...str,'','S.'];
+// console.log(letters);
+
+// //const ingredients =[prompt('Let\'s make pasta ! Ingredient 1?'),prompt('Ingredient 2?'),prompt('Ingredient 3?')]
+// //console.log(ingredients);
+
+// //restaurant.orderPasta(...ingredients)
+
+// const newRestaurant = {foundedIn:1998,...restaurant,founder:'Giusepe'};
+// console.log(newRestaurant);
+
+// const restaurantCopy ={...restaurant};
+// restaurantCopy.name = 'Ristorante Roma'
 
 // const{name,openingHours,categories}=restaurant;
 // console.log(name,openingHours,categories);
