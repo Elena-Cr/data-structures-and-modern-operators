@@ -48,16 +48,24 @@ const restaurant = {
   },
 };
 
-console.log(3||'Jonas');
-console.log(''||'Jonas');
-console.log(true||0);
-console.log(undefined||null);
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests||10;
+console.log(guests);
 
 
-console.log(3&&'Jonas');
-console.log(''&&'Jonas');
-console.log(true&&0);
-console.log(undefined&&null);
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect);
+
+// console.log(3||'Jonas');
+// console.log(''||'Jonas');
+// console.log(true||0);
+// console.log(undefined||null);
+
+
+// console.log(3&&'Jonas');
+// console.log(''&&'Jonas');
+// console.log(true&&0);
+// console.log(undefined&&null);
 
 
 // //SPREAD - on right side of =
