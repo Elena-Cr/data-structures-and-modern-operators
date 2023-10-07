@@ -59,24 +59,32 @@ const rest2 ={
 owner :'Giovanni Rozzi',
 };
 
-// rest1.numGuests=rest1.numGuests||10;  
-// rest2.numGuests=rest2.numGuests||10;  
+const menu = [...restaurant.starterMenu,...restaurant.mainMenu];
 
-// rest1.numGuests||=10;
-// rest2.numGuests||=10;
+for(const item of menu) console.log(item);
 
-rest1.numGuests??=10;
-rest2.numGuests??=10;
+for (const [i,el] of menu.entries()){
+  console.log(`${i+1}:${el}`);
+}
 
-// rest2.owner=rest2.owner&&"<ANONYMOUS>"
-// rest1.owner=rest1.owner&&"<ANONYMOUS>"
+// // rest1.numGuests=rest1.numGuests||10;  
+// // rest2.numGuests=rest2.numGuests||10;  
 
-rest1.owner&&="<ANONYMOUS>";
-rest2.owner&&="<ANONYMOUS>";
+// // rest1.numGuests||=10;
+// // rest2.numGuests||=10;
+
+// rest1.numGuests??=10;
+// rest2.numGuests??=10;
+
+// // rest2.owner=rest2.owner&&"<ANONYMOUS>"
+// // rest1.owner=rest1.owner&&"<ANONYMOUS>"
+
+// rest1.owner&&="<ANONYMOUS>";
+// rest2.owner&&="<ANONYMOUS>";
 
 
-console.log(rest1);
-console.log(rest2);
+// console.log(rest1);
+// console.log(rest2);
 // restaurant.numGuests = 0;
 // const guests = restaurant.numGuests||10;
 // console.log(guests);
