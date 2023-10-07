@@ -4,18 +4,18 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
-const weekdays =['mon','tue','wed','thu','fri','sat','sun']
+const weekdays =['mon','tue','wed','thu','fri','sat','sun'];
 
 const   openingHours= {
-  weekdays[3]: {
+ [weekdays[3]]: {
     open: 12,
     close: 22,
   },
-  weekdays[4]: {
+  [weekdays[4]]: {
     open: 11,
     close: 23,
   },
-  weekdays[5]: {
+  [weekdays[5]]: {
     open: 0, // Open 24 hours
     close: 24,
   },
@@ -51,6 +51,28 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+
+if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
+
+//with OPTIONAL CHAINING
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+//EXAMPLE
+const days =['mon','tue','wed','thu','fri','sat','sun'];
+
+for(const day of days){
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+//Methods
+console.log(restaurant.order?.(0,1)??'Method does not exist');
+console.log(restaurant.orderRisoto?.(0,1)??'Method does not exist');
+
+//Arrays
+const users = [{name:"Jonas",email:'hello@jonas.io'}];
+console.log(users[0].name??'User array empty');
 
 // const rest1 ={
 //   name:'Capri',
