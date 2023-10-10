@@ -40,6 +40,7 @@ const game = {
     },
     }
 
+    //Challenge 1//
    //1.
    const[players1,players2]=game.players;
    console.log(players1,players2);
@@ -72,4 +73,17 @@ const game = {
 
    console.log(printGoals(...game.scored));
 
-   
+    //Challenge 2 //
+    //1.
+    let goal = 0;
+    for (player of game.scored ){
+        goal++;
+        console.log(`Goal ${goal}: ${player}`);
+    };
+
+    //2.
+    let avgOdd = 0;
+    for(const odd of Object.values(game.odds))
+        avgOdd+=odd;
+    avgOdd/=Object.values(game.odds).length;
+    console.log(avgOdd);

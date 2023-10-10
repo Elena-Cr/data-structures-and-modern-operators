@@ -52,27 +52,27 @@ const restaurant = {
   },
 };
 
-//property NAMES
-const propreties = Object.keys(openingHours);
-console.log(propreties);
+// //property NAMES
+// const propreties = Object.keys(openingHours);
+// console.log(propreties);
 
-let operStr = `We are open on ${propreties.length} days:`
-for (const day of propreties){
-  operStr+=`${day}, `;
-}
-console.log(operStr);
+// let operStr = `We are open on ${propreties.length} days:`
+// for (const day of propreties){
+//   operStr+=`${day}, `;
+// }
+// console.log(operStr);
 
-//property VALUES
-const values = Object.values(openingHours);
-console.log(values);
+// //property VALUES
+// const values = Object.values(openingHours);
+// console.log(values);
 
-//Entire object
-const entries = Object.entries(openingHours);
-console.log(entries);
+// //Entire object
+// const entries = Object.entries(openingHours);
+// console.log(entries);
 
-for(const [key,{open,close}] of entries){
-  console.log(`On ${key} we open at ${open} and close at ${close}.`);
-}
+// for(const [key,{open,close}] of entries){
+//   console.log(`On ${key} we open at ${open} and close at ${close}.`);
+// }
 
 // if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
 
