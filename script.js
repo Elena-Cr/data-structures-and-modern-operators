@@ -52,6 +52,39 @@ const restaurant = {
   },
 };
 
+//SETS
+
+const ordersSet = new Set(['Pasta','Pizza','Risotto','Pasta','Pizza']);
+console.log(ordersSet);
+
+console.log(new Set('Elena'));
+
+//METHODS
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+// ordersSet.clear();
+console.log(ordersSet);
+
+for(const order of ordersSet)console.log(order);
+
+//Example
+
+//Make an array with only the unique positions
+const staff = ['Waiter','Chef','Waiter','Manager','Chef','Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+//How many unique positions
+console.log(new Set(['Waiter','Chef','Waiter','Manager','Chef','Waiter']).size);
+
+//How many different letters are in a string 
+console.log(new Set('elenacristescu').size);
+
 // //property NAMES
 // const propreties = Object.keys(openingHours);
 // console.log(propreties);
