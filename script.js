@@ -52,38 +52,47 @@ const restaurant = {
   },
 };
 
-//SETS
+//MAPS
+const rest = new Map();
+rest.set('name','Classico Italiano');
+rest.set(1,'Fireze,Italy');
+console.log(rest.set(2,'Lisbon,Portugal'));
 
-const ordersSet = new Set(['Pasta','Pizza','Risotto','Pasta','Pizza']);
-console.log(ordersSet);
+rest.set('categories',['Italian', 'Pizzeria', 'Vegetarian', 'Organic']).set('open',11).set('close',23);
 
-console.log(new Set('Elena'));
 
-//METHODS
-console.log(ordersSet.size);
-console.log(ordersSet.has('Pizza'));
-console.log(ordersSet.has('Bread'));
+// //SETS
 
-ordersSet.add('Garlic Bread');
-ordersSet.add('Garlic Bread');
-ordersSet.delete('Risotto');
-// ordersSet.clear();
-console.log(ordersSet);
+// const ordersSet = new Set(['Pasta','Pizza','Risotto','Pasta','Pizza']);
+// console.log(ordersSet);
 
-for(const order of ordersSet)console.log(order);
+// console.log(new Set('Elena'));
 
-//Example
+// //METHODS
+// console.log(ordersSet.size);
+// console.log(ordersSet.has('Pizza'));
+// console.log(ordersSet.has('Bread'));
 
-//Make an array with only the unique positions
-const staff = ['Waiter','Chef','Waiter','Manager','Chef','Waiter'];
-const staffUnique = [...new Set(staff)];
-console.log(staffUnique);
+// ordersSet.add('Garlic Bread');
+// ordersSet.add('Garlic Bread');
+// ordersSet.delete('Risotto');
+// // ordersSet.clear();
+// console.log(ordersSet);
 
-//How many unique positions
-console.log(new Set(['Waiter','Chef','Waiter','Manager','Chef','Waiter']).size);
+// for(const order of ordersSet)console.log(order);
 
-//How many different letters are in a string 
-console.log(new Set('elenacristescu').size);
+// //Example
+
+// //Make an array with only the unique positions
+// const staff = ['Waiter','Chef','Waiter','Manager','Chef','Waiter'];
+// const staffUnique = [...new Set(staff)];
+// console.log(staffUnique);
+
+// //How many unique positions
+// console.log(new Set(['Waiter','Chef','Waiter','Manager','Chef','Waiter']).size);
+
+// //How many different letters are in a string 
+// console.log(new Set('elenacristescu').size);
 
 // //property NAMES
 // const propreties = Object.keys(openingHours);
