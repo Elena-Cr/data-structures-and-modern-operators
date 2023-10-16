@@ -52,41 +52,83 @@ const restaurant = {
   },
 };
 
-// MAPS:ITERATION//
+//STRINGS//
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
 
-const question = new Map ([
-  ['question','What is the best programming languare in the world?']
-  ,[1,'C']
-  ,[2,'Java']
-  ,[3,'JavaScript']
-  ,['correct',3]
-  ,[true,'Correct']
-  ,[false,'Try again!']
-]);
-console.log(question);
+//Accessing letters from the string
+console.log(plane[0]);
+console.log('B737'[0]);
 
-//Conver OBJECT to MAP 
-console.log(Object.entries(openingHours));
-const hoursMap = new Map(Object.entries(openingHours));
-console.log(hoursMap);
+//Methods
+console.log(airline.length);
+console.log('B737'.length);
 
-//Looping MAPS
-console.log(question.get('question'));
-for(const [key,value] of question){
-  if(typeof key==='number')console.log(`Answer ${key}: ${value}`);
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('Portugal'));
+
+//SLICE Method 
+console.log(airline.slice(4));
+console.log(airline.slice(4,7));
+
+//Extracting first word
+console.log(airline.slice(0,airline.indexOf(" ")));
+//Extracting last word
+console.log(airline.slice(airline.lastIndexOf(" ")+1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1,-1));
+
+const checkMiddleSeat = function(seat){
+const s = seat.slice(-1);
+if (s ==='B'||s==='E')console.log('You got the middle seat :(');
+else console.log('You got lucky :D');
 };
 
-//const answer = Number(prompt('Your answer is ... '));
-const answer=3;
-//console.log(answer);
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
 
-console.log(question.get(answer===question.get('correct')));
 
-//Convert MAP to ARRAY 
-console.log([...question]);
-//console.log([...question.entries()]);
-console.log([...question.keys()]);
-console.log([...question.values()]);
+
+
+
+// // MAPS:ITERATION//
+
+// const question = new Map ([
+//   ['question','What is the best programming languare in the world?']
+//   ,[1,'C']
+//   ,[2,'Java']
+//   ,[3,'JavaScript']
+//   ,['correct',3]
+//   ,[true,'Correct']
+//   ,[false,'Try again!']
+// ]);
+// console.log(question);
+
+// //Conver OBJECT to MAP 
+// console.log(Object.entries(openingHours));
+// const hoursMap = new Map(Object.entries(openingHours));
+// console.log(hoursMap);
+
+// //Looping MAPS
+// console.log(question.get('question'));
+// for(const [key,value] of question){
+//   if(typeof key==='number')console.log(`Answer ${key}: ${value}`);
+// };
+
+// //const answer = Number(prompt('Your answer is ... '));
+// const answer=3;
+// //console.log(answer);
+
+// console.log(question.get(answer===question.get('correct')));
+
+// //Convert MAP to ARRAY 
+// console.log([...question]);
+// //console.log([...question.entries()]);
+// console.log([...question.keys()]);
+// console.log([...question.values()]);
 
 // //MAPS// //
 // const rest = new Map();
